@@ -28,8 +28,6 @@
     --grijs: #f7f7f7;
 }
 
-/* font-family: 'Roboto', sans-serif; */
-
 body {
     max-width: 100vw;
     overflow-x: hidden;
@@ -41,9 +39,14 @@ body {
 }
 
 header {
-    background-color: var(--rood);
-    min-height: 80vh;
+    min-height: 90vh;
     width: 100vw;
+    overflow: hidden;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/schoorsteen.png);
+    backdrop-filter: brightness(50%);
+    background-position: center;
+    background-size: cover;
 }
 
 header h1 {
@@ -68,7 +71,7 @@ header nav {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    padding: 2rem 1.2rem 0;
+    padding: 2rem 1.2rem 0 1.2rem;
     align-items: center;
 }
 
@@ -146,8 +149,7 @@ li {
     width: 100%;
     display: flex;
     flex-direction: column;
-    box-shadow: 6px 6px rgba(0, 0, 0, .2);
-    overflow: hidden;
+    height: auto;
 }
 
 #kijk .crop {
@@ -168,14 +170,15 @@ li {
     padding: 1rem;
 }
 
-.grid{
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 1.8rem;
-}
-
 #form {
     background-color: var(--blauw);
     padding: 3rem 0;
+}
+
+.dropShadow {
+    box-shadow: 6px 6px rgba(0, 0, 0, .2);
+    width: 100%;
+    height: auto;
 }
 
 #formGrid {
@@ -191,6 +194,7 @@ li {
     box-sizing: border-box;
     width: 100%;
     padding: 1em;
+    color: gray;
 }
 
 .bestel {
@@ -200,6 +204,8 @@ li {
     color: var(--wit);
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
+
+    margin-top: 1.2rem;
 }
 
 #form h2 {
@@ -263,7 +269,7 @@ li {
 }
 
 #lees li {
-    padding: 1rem;
+    padding: 1.2rem;
     box-sizing: border-box;
 }
 
@@ -273,10 +279,6 @@ li {
     grid-column-gap: 1.8rem;
     grid-row-gap: 1.8rem;
 }
-
-
-
-
 
 
 .mobNone, nav .tabletNone {
