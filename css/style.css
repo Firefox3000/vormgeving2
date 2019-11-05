@@ -84,6 +84,14 @@ nav .social {
     flex-direction: row;
 }
 
+nav .social svg {
+    width: 1.6rem;
+    height: auto;
+    fill: var(--wit);
+}
+
+
+
 nav .social img {
     width: 1.6rem;
     height: auto;
@@ -106,7 +114,7 @@ nav .social li {
     width: .15rem;
     height: 1.6rem;
     margin-left: 1.2rem;
-    background-color: var(--zwart);
+    background-color: var(--wit);
 }
 
 nav .links {
@@ -118,9 +126,72 @@ li {
     list-style: none;
 }
 
+
+#over {
+    background-color:var(--grijs);
+    padding: 3rem;
+}
+
+#over h2 {
+    font-family: 'Roboto', sans-serif;
+    color: var(--wit);
+    font-size: 2rem;
+}
+
+.overGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 1.8rem;
+
+    grid-template-areas:
+    "overImg"
+    "overInfo";
+}
+
+.overInfo {
+    grid-area: overInfo;  
+}
+
+#over .crop {
+    width: 100%;
+    margin: 0;
+    max-height: 20rem;
+    overflow: hidden;
+}
+
+.overImg {
+    width: 100%;
+    min-height: 100%;
+    margin-bottom: -1rem;
+}
+
+.overInfo p, .overInfo h2 {
+    width: 100%;
+    background-color: var(--blauw);
+    box-sizing: border-box;
+    color: var(--wit);
+}
+.overInfo p {
+    padding: 1rem 1rem 0 1rem;
+}
+
+.overInfo p:last-child {
+    padding-bottom: 1.8rem;
+}
+
+.overInfo h2 {
+    padding: .8rem 1rem 0 1rem;
+}
+
+
+.overImg {
+    grid-area: overImg;
+}
+
+
 #kijk {
     background-color: var(--rood);
-    padding: 2.5rem 0;
+    padding: 2.5rem 0 3.5rem 0;
 }
 
 #kijk h2 {
@@ -152,6 +223,19 @@ li {
     height: auto;
 }
 
+.bekijkMeer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.bekijkMeer svg {
+    height: 1rem;
+    width: auto;
+    fill: var(--wit);
+    margin-right: .4rem;
+}
+
 #kijk .crop {
     width: 100%;
     height: 12.5rem;
@@ -162,6 +246,10 @@ li {
     width: 100%;
     min-height: 100%;
     height: auto;
+}
+
+#kijk li:hover .dropShadow{
+    box-shadow: 8px 8px rgba(0, 0, 0, .4);
 }
 
 #kijk h3 {
@@ -179,6 +267,7 @@ li {
     box-shadow: 6px 6px rgba(0, 0, 0, .2);
     width: 100%;
     height: auto;
+    transition: all .2s ease;
 }
 
 #formGrid {
@@ -198,14 +287,31 @@ li {
 }
 
 .bestel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--geel);
-    font-size: 1.5rem;
-    padding: .5em;
-    color: var(--wit);
+    padding: .8em; 
+    margin-top: 1.2rem;
+}
+
+#formGrid .bestel p {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--wit);
+    background-color: transparent;
+    margin: 0;
+    margin-left: .8rem;
+    padding: 0;
+}
 
-    margin-top: 1.2rem;
+.bestel svg {
+    fill: var(--wit);
+    height: 1.5rem;
+    width: auto;
+    margin-right: 1.6rem;
 }
 
 #form h2 {
@@ -308,12 +414,64 @@ li {
     header h1 {
         font-size: 3rem;
     }
+
+    .overGrid {
+        margin: 0 auto;
+        /* max-width: calc(100% - 33%); */
+        grid-template-areas: 
+        "overInfo overImg";
+
+        grid-template-columns: repeat(2, 1fr);
+        background-color: var(--blauw);
+    }
+
+    #over .crop {
+        min-height: 100%;
+    }
 }
 
 /*Desktop*/
 @media screen and (min-width: 1024px) {
     .wrapper {
         max-width: 1000px;
+    }
+
+    .overGrid {
+        margin: 0 auto;
+        max-width: calc(100% - 33%);
+    }
+
+    .overInfo p:last-child {
+        padding-bottom: 3rem;
+    }
+
+    #over .crop {
+        min-height: 100%;
+        width: auto;
+    }
+
+    nav .tabletNone {
+        display: flex;
+    }
+
+    .col3Grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .wrapper {
+        max-width: 1100px;
+    }
+
+    .overGrid {
+        margin: 0 auto;
+        max-width: calc(100% - 33%);
+    }
+
+    #over .crop {
+        min-height: 100%;
+        width: auto;
     }
 
     nav .tabletNone {
