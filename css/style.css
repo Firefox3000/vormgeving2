@@ -430,6 +430,47 @@ li {
     }
 }
 
+
+footer {
+    background-color: var(--zwart);
+    padding: 3rem;
+}
+
+footer svg {
+    width: 1.6rem;
+    height: auto;
+    fill: var(--wit);
+    margin: 0 .5rem;
+}
+
+footer div:first-child {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: 400;
+    color: var(--wit);
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+footer div:first-child::after {
+    content: "";
+    background-color: var(--geel);
+    width: 6.2rem;
+    height: 2px;
+    position: absolute;
+    top: 1.2rem;
+    margin-left: -6.2rem;
+}
+
+footer div:last-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 /*Desktop*/
 @media screen and (min-width: 1024px) {
     .wrapper {
